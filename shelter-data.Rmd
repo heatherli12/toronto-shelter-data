@@ -1,0 +1,29 @@
+---
+title: "shelter-data"
+author: "Heather Li"
+date: "21/06/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(opendatatoronto)
+library(lubridate)
+```
+
+
+```{r filtering-data, echo = FALSE}
+#getting all the resources for the package, i.e. individual data sets
+resources <- list_package_resources("8a6eceb2-821b-4961-a29d-758f3087732d")
+#identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
+datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
+#getting data for each year and cleaning it up
+#2020
+shelter_data_2020 <- datastore_resources %>% 
+  filter(row_number()==5) %>% 
+  get_resource() %>% 
+  select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, OCCUPANCY, CAPACITY)
+shelter_data_2020
+```
+
