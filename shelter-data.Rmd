@@ -29,7 +29,11 @@ shelter_data_2020_overview <- datastore_resources %>%
   mutate(PERCENT_OCCUPIED = OCCUPANCY/CAPACITY) %>% 
   mutate(OCCUPANCY_DATE = mdy(OCCUPANCY_DATE)) %>%
   select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, PERCENT_OCCUPIED) %>% 
+<<<<<<< HEAD
   group_by(OCCUPANCY_DATE) %>% 
+=======
+  group_by(SHELTER_POSTAL_CODE, OCCUPANCY_DATE) %>% 
+>>>>>>> fc7f63dbe2a26506c807080f4073e3db03e7a78b
   summarize(AVG_ORATE = mean(PERCENT_OCCUPIED))
 shelter_data_2020_overview
 ```
@@ -37,14 +41,23 @@ shelter_data_2020_overview
 ```{r plotting_the_data}
 ggplot(data = shelter_data_2020_overview,
        mapping = aes(x = OCCUPANCY_DATE,
+<<<<<<< HEAD
                      y = AVG_ORATE))+
+=======
+                     y = AVG_ORATE,
+                     color = SHELTER_POSTAL_CODE))+
+>>>>>>> fc7f63dbe2a26506c807080f4073e3db03e7a78b
   geom_line()+
   scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
   labs(x = "Date",
        y = "Percent of Shelter Beds Occupied",
+<<<<<<< HEAD
        color = "Postal Code",
        title = "A")+
   theme_minimal()
+=======
+       color = "Postal Code")
+>>>>>>> fc7f63dbe2a26506c807080f4073e3db03e7a78b
 
 ```
 
