@@ -20,10 +20,30 @@ resources <- list_package_resources("8a6eceb2-821b-4961-a29d-758f3087732d")
 datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
 #getting data for each year and cleaning it up
 #2020
-shelter_data_2020 <- datastore_resources %>% 
+shelter_data_2020_overview <- datastore_resources %>% 
   filter(row_number()==5) %>% 
   get_resource() %>% 
-  select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, OCCUPANCY, CAPACITY)
-shelter_data_2020
+  select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, OCCUPANCY, CAPACITY) %>% 
+  filter(CAPACITY > 0) %>% 
+  mutate(SHELTER_POSTAL_CODE = str_sub(SHELTER_POSTAL_CODE, 1, 3)) %>% 
+  mutate(PERCENT_OCCUPIED = OCCUPANCY/CAPACITY) %>% 
+  mutate(OCCUPANCY_DATE = mdy(OCCUPANCY_DATE)) %>%
+  select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, PERCENT_OCCUPIED) %>% 
+  group_by(SHELTER_POSTAL_CODE, OCCUPANCY_DATE) %>% 
+  summarize(AVG_ORATE = mean(PERCENT_OCCUPIED))
+shelter_data_2020_overview
+```
+
+```{r plotting_the_data}
+ggplot(data = shelter_data_2020_overview,
+       mapping = aes(x = OCCUPANCY_DATE,
+                     y = AVG_ORATE,
+                     color = SHELTER_POSTAL_CODE))+
+  geom_line()+
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
+  labs(x = "Date",
+       y = "Percent of Shelter Beds Occupied",
+       color = "Postal Code")
+
 ```
 
