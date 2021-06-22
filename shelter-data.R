@@ -1,19 +1,7 @@
----
-title: "shelter-data"
-author: "Heather Li"
-date: "21/06/2021"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(opendatatoronto)
 library(lubridate)
-```
 
-
-```{r filtering-data, echo = FALSE}
 #getting all the resources for the package, i.e. individual data sets
 resources <- list_package_resources("8a6eceb2-821b-4961-a29d-758f3087732d")
 #identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
@@ -32,9 +20,8 @@ shelter_data_2020_overview <- datastore_resources %>%
   group_by(OCCUPANCY_DATE) %>% 
   summarize(AVG_ORATE = mean(PERCENT_OCCUPIED))
 shelter_data_2020_overview
-```
 
-```{r plotting_the_data}
+#making the plots
 ggplot(data = shelter_data_2020_overview,
        mapping = aes(x = OCCUPANCY_DATE,
                      y = AVG_ORATE))+
@@ -46,6 +33,3 @@ ggplot(data = shelter_data_2020_overview,
        title = "An Overview of Shelter Occupancy in the City of Toronto in 2020",
        subtitle = "The COVID-19 pandemic reduced the occupancy of Toronto shelters, even in the winter.")+
   theme_minimal()
-
-```
-

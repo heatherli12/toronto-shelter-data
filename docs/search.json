@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-21T22:28:25-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Toronto Shelter Data in 2020",
+      "description": "An examination of overall occupancy trends in Toronto shelters in 2020.\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-21T22:28:26-04:00"
+    }
+  ],
+  "collections": []
+}
