@@ -1,0 +1,12 @@
+name: "."
+title: "Toronto Shelter Data in 2020"
+description: |
+  Toronto Shelter Data in 2020
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
