@@ -15,7 +15,23 @@ library(bsselectR)
 
 ```
 
-```{r}
+```{r reading rds plots from shelter-data, echo = FALSE}
+#will assign the rds files to an R object to read them here
+overview <- read_rds("overview.rds")
+m1e <- read_rds("m1e.rds")
+```
+ 
+```{r save images, echo = FALSE}
+ggsave("images/overview.png", overview)
+ggsave("images/m1e.png", m1e)
+```
 
+```{r making vectors of the images, echo = FALSE}
+plots <- c(Overview = "images/overview.png",
+           M1E = "images/m1e.png")
+```
+
+```{r use bsselect}
+bsselect(plots, type = "img", selected = "Overview", show_tick = TRUE, live_search = TRUE)
 ```
 

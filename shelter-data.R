@@ -32,7 +32,7 @@ plot_overview <- ggplot(data = shelter_data_2020_overview,
   scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
   labs(x = NULL,
        y = "Percent of Shelter Beds Occupied",
-       title = "An Overview of Shelter Occupancy in the City of Toronto in 2020",
+       title = "An Overview of Shelter Occupancy in the \nCity of Toronto in 2020",
        caption = "Open Data, City of Toronto 2021")+
   theme_economist() +
   theme(panel.grid.major = element_line(size = 0.5, linetype = "dashed", color = "#bebebe"))
@@ -62,9 +62,10 @@ M1E <- postal_code_data %>%
   scale_y_continuous(labels = scales::percent_format(accuracy = 1))+
   labs(x = NULL,
        y = "Percent of Shelter Beds Occupied",
-       title = "An Overview of Shelter Occupancy in Postal Code M1E in 2020",
+       title = "An Overview of Shelter Occupancy in \nPostal Code M1E in 2020",
        caption = "Open Data, City of Toronto 2021")+
   theme_economist() +
   theme(panel.grid.major = element_line(size = 0.5, linetype = "dashed", color = "#bebebe"))
+M1E
 write_rds(M1E, "m1e.rds")
 
