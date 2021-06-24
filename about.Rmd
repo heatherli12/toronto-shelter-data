@@ -8,3 +8,17 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## About Me
+Hi! I'm **Heather Li**- an incoming first-year at St Catherine's College, University of Oxford studying Philosophy, Politics, and Economics.
+
+## About the Project
+*An Overview of Occupancy in Toronto Shelters*: Housing has always been a hot topic in the City of Toronto, with low-income housing areas in Regent's Park being viewed as dangerous and unsafe, with chronic problems in housing especially during Canada's colder winter months. Most recently, [Toronto police are in standoffs with the public regarding their evictions of a homeless encampment in Trinity Bellwoods Park.](https://www.cbc.ca/news/canada/toronto/trinity-bellwoods-homeless-encampment-1.6074952). This led me to ask: how used are Toronto shelters? How much demand is there currently for the shelters, and are they keeping up with this demand? Check out [this page](index.html) for broad trends, or [this page here](postal-code.html) for shelter data from individual postal codes.
+
+### Goals
+* Map the changes in occupancy of Toronto shelters throughout the year.
+* Analyze how COVID-19 may have affected the occupancy levels of shelters.
+  + It's going to be hard to tell whether the lower levels of occupancy in the summer are due to COVID or whether they're due to the warmer temperatures and not needing to use shelters to stay out of the cold.
+* See whether certain postal codes have chronic problems with either filling their shelters or too many people.
+
+### Credits
+This project was created thanks to [Kane's Free High School Data Science Bootcamp](https://bootcamp.davidkane.info/). Check out the link here to learn more about the summer program!
