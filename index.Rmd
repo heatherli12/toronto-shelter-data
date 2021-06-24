@@ -1,7 +1,7 @@
 ---
 title: "Toronto Shelter Data in 2020"
 description: |
-  An examination of overall occupancy trends in Toronto shelters in 2020.
+  This project visualizes the percentage occupation of Toronto Shelters in the year 2020.
 site: distill::distill_website
 ---
 
@@ -11,27 +11,16 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(opendatatoronto)
 library(distill)
-library(bsselectR)
 
 ```
 
-```{r reading rds plots from shelter-data, echo = FALSE}
-#will assign the rds files to an R object to read them here
-overview <- read_rds("overview.rds")
-m1e <- read_rds("m1e.rds")
-```
- 
-```{r save images, echo = FALSE}
-ggsave("images/overview.png", overview)
-ggsave("images/m1e.png", m1e)
+```{r getting the rds for overview, echo = FALSE}
+overview_plot <- read_rds("overview.rds")
 ```
 
-```{r making vectors of the images, echo = FALSE}
-plots <- c(Overview = "images/overview.png",
-           M1E = "images/m1e.png")
+```{r displaying the plot}
+overview_plot
 ```
 
-```{r use bsselect}
-bsselect(plots, type = "img", selected = "Overview", show_tick = TRUE, live_search = TRUE)
-```
-
+## Broad Trends
+It's clear that winter months tend to have the highest occupancy ratios, with the average occupancy rate on January 24th, 2020 being **97%**. This could most likely be attributed to the lower temperatures, with the average temperature in January and February being around -5°C (23°F), but with the lows dipping down to -16°C (3.2°F). However, it is also clear that COVID-19 had a significant impact on occupancy rates, as shelters, even during December 2020, did not regain their occupancy rates and stayed at around 77%, possibly due to requirements put in by the City to limit the spread of the disease. Check out [Postal Codes](docs/postal-codes.html) to see trends in your area.

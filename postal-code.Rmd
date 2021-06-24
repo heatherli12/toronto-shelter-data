@@ -1,0 +1,35 @@
+---
+title: "Postal Code"
+description: |
+  Search for shelter occupancy trends in specific postal codes with the drop down menu here.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(opendatatoronto)
+library(distill)
+library(bsselectR)
+```
+
+```{r reading rds plots from shelter-data, echo = FALSE}
+#will assign the rds files to an R object to read them here
+m1e <- read_rds("m1e.rds")
+```
+ 
+```{r save images, echo = FALSE}
+ggsave("images/m1e.png", m1e)
+```
+
+```{r making vectors of the images, echo = FALSE}
+plots <- c(M1E = "images/m1e.png")
+```
+
+```{r use bsselect}
+bsselect(plots, type = "img", selected = "M1E", show_tick = TRUE, live_search = TRUE)
+```
+
+
+
+
