@@ -31,7 +31,7 @@ data_source <- datastore_resources %>%
 
 The data for this project was sourced from [Open Data Toronto](https://www.toronto.ca/city-government/data-research-maps/open-data/).
 
-* To replicate my project, install the Open Data Toronto R package (install.packages("opendatatoronto")).
+* To replicate my project, install the Open Data Toronto R package `(install.packages("opendatatoronto"))`.
 * The specific package I used was *8a6eceb2-821b-4961-a29d-758f3087732d*, row 5 of this package resource.
 * You can find detailed documentation of the Daily Shelter Occupancy Dataset here: [Daily Shelter Occupancy](https://open.toronto.ca/dataset/daily-shelter-occupancy/)
 
