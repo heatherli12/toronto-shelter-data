@@ -2,6 +2,7 @@
 title: "Toronto Shelter Data in 2020"
 description: |
   This project visualizes the percentage occupation of Toronto Shelters in the year 2020.
+bibliography: bibliography.bib
 site: distill::distill_website
 ---
 
@@ -23,6 +24,6 @@ overview_plot
 ```
 
 ## Broad Trends
-It's clear that winter months tend to have the highest occupancy ratios, with the average occupancy rate on January 24th, 2020 being **97%**. This could most likely be attributed to the lower temperatures, with the average temperature in January and February being around -5°C (23°F), but with the lows dipping down to -16°C (3.2°F). However, it is also clear that COVID-19 had a significant impact on occupancy rates, as shelters, even during December 2020, did not regain their occupancy rates and stayed at around 77%, possibly due to requirements put in by the City to limit the spread of the disease. Check out [Postal Codes](postal-code.html) to see trends in your area.
+It's clear that winter months tend to have the highest occupancy ratios, with the average occupancy rate on January 24th, 2020 being **97%**. This could most likely be attributed to the lower temperatures, with the average temperature in January and February being around -5°C (23°F), but with the lows dipping down to -16°C (3.2°F). However, it is also clear that COVID-19 had a significant impact on occupancy rates, as shelters, even during December 2020, did not regain their occupancy rates and stayed at around 77%, possibly due to requirements put in by the City to limit the spread of the disease. Check out [Postal Codes](postal-code.html) to see trends in your area. [@weather]
 
 *N.B.*: the plot is interactive! Click on it and hover your cursor above the line to view occupancy rates from individual dates.

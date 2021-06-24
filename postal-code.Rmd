@@ -2,7 +2,6 @@
 title: "Postal Codes"
 description: |
   Search for shelter occupancy trends in specific postal codes with the drop down menu here.
-output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}

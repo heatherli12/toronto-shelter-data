@@ -102,10 +102,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="twitter:title" content="Toronto Shelter Data in 2020: About This Project"/>
 
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Toronto’s promise for permanent housing ends standoff in trinity bellwoods park, advocate says;citation_publication_date=2021;citation_publisher=https://www.cbc.ca/news/canada/toronto/trinity-bellwoods-homeless-encampment-1.6074952;citation_author=CBC News"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["About This Project"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["About This Project"]},{"type":"character","attributes":{},"value":["bibliography.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2064,6 +2066,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="postal-code.html">Postal Codes</a>
+<a href="data.html">Data Source</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2084,7 +2087,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="about-me">About Me</h2>
 <p>Hi! I’m <strong>Heather Li</strong> - an incoming first-year at St Catherine’s College, University of Oxford studying Philosophy, Politics, and Economics. I have a broad interest in using data for social justice topics as well as analyzing trends in international relations and the global economy.</p>
 <h2 id="about-the-project">About the Project</h2>
-<p><em>An Overview of Occupancy in Toronto Shelters</em>: Housing has always been a hot topic in the City of Toronto, with low-income housing areas in Regent’s Park being viewed as dangerous and unsafe, with chronic problems in housing especially during Canada’s colder winter months. Most recently, <a href="https://www.cbc.ca/news/canada/toronto/trinity-bellwoods-homeless-encampment-1.6074952">Toronto police are in standoffs with the public regarding their evictions of a homeless encampment in Trinity Bellwoods Park.</a> This led me to ask: how used are Toronto shelters? How much demand is there currently for the shelters, and are they keeping up with this demand? Check out <a href="index.html">this page</a> for broad trends, or <a href="postal-code.html">this page here</a> for shelter data from individual postal codes.</p>
+<p><em>An Overview of Occupancy in Toronto Shelters</em>: Housing has always been a hot topic in the City of Toronto, with low-income housing areas in Regent’s Park being viewed as dangerous and unsafe, with chronic problems in housing especially during Canada’s colder winter months. Most recently, <a href="https://www.cbc.ca/news/canada/toronto/trinity-bellwoods-homeless-encampment-1.6074952">Toronto police are in standoffs with the public regarding their evictions of a homeless encampment in Trinity Bellwoods Park.</a> <span class="citation" data-cites="cbc">(<a href="#ref-cbc" role="doc-biblioref">News 2021</a>)</span> This led me to ask: how used are Toronto shelters? How much demand is there currently for the shelters, and are they keeping up with this demand? Check out <a href="index.html">this page</a> for broad trends, or <a href="postal-code.html">this page here</a> for shelter data from individual postal codes.</p>
 <h3 id="goals-of-this-project">Goals of This Project</h3>
 <ul>
 <li>Map the changes in occupancy of Toronto shelters throughout the year.</li>
@@ -2097,6 +2100,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="credits">Credits</h3>
 <p>This project was created thanks to <a href="https://bootcamp.davidkane.info/">Kane’s Free High School Data Science Bootcamp</a>. Check out the link here to learn more about the summer program!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-cbc" class="csl-entry" role="doc-biblioentry">
+News, CBC. 2021. <span>“Toronto’s Promise for Permanent Housing Ends Standoff in Trinity Bellwoods Park, Advocate Says.”</span> <em>CBC News</em>.
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2108,7 +2116,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

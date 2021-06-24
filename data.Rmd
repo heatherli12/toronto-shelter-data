@@ -1,0 +1,45 @@
+---
+title: "Data Sources"
+description: |
+  Thanks to Open Data Toronto!
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(opendatatoronto)
+library(knitr)
+library(tidyverse)
+library(DT)
+library(lubridate)
+```
+
+```{r data loading, echo = FALSE}
+resources <- list_package_resources("8a6eceb2-821b-4961-a29d-758f3087732d")
+datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
+data_source <- datastore_resources %>% 
+  filter(row_number()==5) %>% 
+  get_resource() %>% 
+  select(OCCUPANCY_DATE, SHELTER_POSTAL_CODE, OCCUPANCY, CAPACITY) %>% 
+  filter(CAPACITY > 0) %>% 
+  mutate(SHELTER_POSTAL_CODE = str_sub(SHELTER_POSTAL_CODE, 1, 3)) %>% 
+  mutate(PERCENT_OCCUPIED = OCCUPANCY/CAPACITY) %>% 
+  mutate(OCCUPANCY_DATE = mdy(OCCUPANCY_DATE))
+```
+
+### Credits
+
+The data for this project was sourced from [Open Data Toronto](https://www.toronto.ca/city-government/data-research-maps/open-data/).
+
+* To replicate my project, install the Open Data Toronto R package (install.packages("opendatatoronto")).
+* The specific package I used was *8a6eceb2-821b-4961-a29d-758f3087732d*, row 5 of this package resource.
+* You can find detailed documentation of the Daily Shelter Occupancy Dataset here: [Daily Shelter Occupancy](https://open.toronto.ca/dataset/daily-shelter-occupancy/)
+
+### Data as a Table
+If you don't care to download the raw data and explore it by yourself, you can find the raw data in the table below here. Happy scrolling!
+
+```{r table}
+datatable(data_source)
+```
+
+

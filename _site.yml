@@ -11,4 +11,6 @@ navbar:
       href: about.html
     - text: "Postal Codes"
       href: postal-code.html
+    - text: "Data Source"
+      href: data.html
 output: distill::distill_article
