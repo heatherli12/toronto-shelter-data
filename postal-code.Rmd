@@ -1,5 +1,5 @@
 ---
-title: "Postal Code"
+title: "Postal Codes"
 description: |
   Search for shelter occupancy trends in specific postal codes with the drop down menu here.
 output: distill::distill_article
@@ -13,17 +13,112 @@ library(distill)
 library(bsselectR)
 ```
 
+Use the drop down menu below to view occupancy trends from your postal code. Some postal codes have shelters that are routinely overcrowded, with over 100% occupancy rates. Some, however, have shelters that are not constantly full. *Note: You can search in this drop down menu! Type your postal code if you don't see it in the first few searches.*
+
 ```{r reading rds plots from shelter-data, echo = FALSE}
 #will assign the rds files to an R object to read them here
 m1e <- read_rds("m1e.rds")
+m1k <- read_rds("m1k.rds")
+m1l <- read_rds("m1l.rds")
+m1m <- read_rds("m1m.rds")
+m1p <- read_rds("m1p.rds")
+m2m <- read_rds("m2m.rds")
+m2n <- read_rds("m2n.rds")
+m3b <- read_rds("m3b.rds")
+m3m <- read_rds("m3m.rds")
+m4c <- read_rds("m4c.rds")
+m4k <- read_rds("m4k.rds")
+m4m <- read_rds("m4m.rds")
+m4t <- read_rds("m4t.rds")
+m4w <- read_rds("m4w.rds")
+m4x <- read_rds("m4x.rds")
+m4y <- read_rds("m4y.rds")
+m5a <- read_rds("m5a.rds")
+m5b <- read_rds("m5b.rds")
+m5c <- read_rds("m5c.rds")
+m5r <- read_rds("m5r.rds")
+m5s <- read_rds("m5s.rds")
+m5t <- read_rds("m5t.rds")
+m5v <- read_rds("m5v.rds")
+m6a <- read_rds("m6a.rds")
+m6c <- read_rds("m6c.rds")
+m6e <- read_rds("m6e.rds")
+m6g <- read_rds("m6g.rds")
+m6h <- read_rds("m6h.rds")
+m6j <- read_rds("m6j.rds")
+m6p <- read_rds("m6p.rds")
+m8y <- read_rds("m8y.rds")
+m9v <- read_rds("m9v.rds")
 ```
  
 ```{r save images, echo = FALSE}
 ggsave("images/m1e.png", m1e)
+ggsave("images/m1k.png", m1k)
+ggsave("images/m1l.png", m1l)
+ggsave("images/m1m.png", m1m)
+ggsave("images/m1p.png", m1p)
+ggsave("images/m2m.png", m2m)
+ggsave("images/m2n.png", m2n)
+ggsave("images/m3b.png", m3b)
+ggsave("images/m3m.png", m3m)
+ggsave("images/m4c.png", m4c)
+ggsave("images/m4k.png", m4k)
+ggsave("images/m4m.png", m4m)
+ggsave("images/m4t.png", m4t)
+ggsave("images/m4w.png", m4w)
+ggsave("images/m4x.png", m4x)
+ggsave("images/m4y.png", m4y)
+ggsave("images/m5a.png", m5a)
+ggsave("images/m5b.png", m5b)
+ggsave("images/m5c.png", m5c)
+ggsave("images/m5r.png", m5r)
+ggsave("images/m5s.png", m5s)
+ggsave("images/m5t.png", m5t)
+ggsave("images/m5v.png", m5v)
+ggsave("images/m6a.png", m6a)
+ggsave("images/m6c.png", m6c)
+ggsave("images/m6e.png", m6e)
+ggsave("images/m6g.png", m6g)
+ggsave("images/m6h.png", m6h)
+ggsave("images/m6j.png", m6j)
+ggsave("images/m6p.png", m6p)
+ggsave("images/m8y.png", m8y)
+ggsave("images/m9v.png", m9v)
 ```
 
 ```{r making vectors of the images, echo = FALSE}
-plots <- c(M1E = "images/m1e.png")
+plots <- c(M1E = "images/m1e.png",
+           M1K = "images/m1k.png",
+           M1L = "images/m1l.png",
+           M1M = "images/m1m.png",
+           M1P = "images/m1p.png",
+           M2M = "images/m2m.png",
+           M2N = "images/m2n.png",
+           M3B = "images/m3b.png",
+           M3M = "images/m3m.png",
+           M4C = "images/m4c.png",
+           M4K = "images/m4k.png",
+           M4M = "images/m4m.png",
+           M4T = "images/m4t.png",
+           M4W = "images/m4w.png",
+           M4X = "images/m4x.png",
+           M4Y = "images/m4y.png",
+           M5A = "images/m5a.png",
+           M5B = "images/m5b.png",
+           M5C = "images/m5c.png",
+           M5R = "images/m5r.png",
+           M5S = "images/m5s.png",
+           M5T = "images/m5t.png",
+           M5V = "images/m5v.png",
+           M6A = "images/m6a.png",
+           M6C = "images/m6c.png",
+           M6E = "images/m6e.png",
+           M6G = "images/m6g.png",
+           M6H = "images/m6h.png",
+           M6J = "images/m6j.png",
+           M6P = "images/m6p.png",
+           M8Y = "images/m8y.png",
+           M9V = "images/m9v.png")
 ```
 
 ```{r use bsselect}
